@@ -3,39 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO Otimizado -->
+
   <title>BLU Engenharia | Especialistas em sistemas de climatização e exaustão - Visita Técnica Gratuita</title>
   <meta name="description" content="Especialistas em PMOC, consultoria e auditoria HVAC e manutenção de ar condicionado comercial em Curitiba. Visita técnica gratuita para lojistas. Conforme Lei 13.589/2018.">
   <meta name="keywords" content="PMOC Curitiba, engenharia climatização, consultoria HVAC, manutenção ar condicionado, Lei 13.589/2018">
   <meta name="author" content="BLU Engenharia">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph Meta Tags para compartilhamento em redes sociais -->
+
   <meta property="og:title" content="BLU Engenharia | Especialistas em PMOC e Climatização">
   <meta property="og:description" content="Soluções completas em climatização e exaustão. Visita técnica gratuita!">
   <meta property="og:image" content="https://images.unsplash.com/photo-1604079136747-b2ee23fd77aa?auto=format&fit=crop&w=1400&q=80">
   <meta property="og:url" content="https://www.bluengenharia.com">
   <meta property="og:type" content="website">
-  
-  <!-- Canonical URL -->
+
   <link rel="canonical" href="https://www.bluengenharia.com">
-  
-  <!-- Favicon (substitua com seu próprio favicon quando tiver) -->
+
   <link rel="icon" type="image/png" href="/favicon.png">
-  
-  <!-- Tailwind CSS via jsdelivr -->
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  
-  <!-- Schema Markup para SEO -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,35 +117,35 @@
       --primary: #0a4d8c;
       --primary-dark: #083b6c;
       --primary-light: #1a6cb5;
-      --accent: #ffa500;
+      --accent: #ffa500; /* Laranja */
       --accent-dark: #e69500;
       --accent-light: #ffb733;
       --transition-slow: all 0.5s ease;
       --transition-medium: all 0.3s ease;
       --transition-fast: all 0.2s ease;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       line-height: 1.6;
     }
-    
+
     .sr {
       visibility: hidden;
     }
-    
+
     .hero-bg {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1604079136747-b2ee23fd77aa?auto=format&fit=crop&w=1400&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1604079136747-b2ee23fd77aa?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
-    
+
     .menu-mobile {
       display: none;
       position: fixed;
@@ -161,21 +153,30 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.95);
-      z-index: 50;
+      background-color: rgba(10, 77, 140, 0.97); /* Usando var(--primary) com alta opacidade */
+      z-index: 50; /* Acima do header */
       padding: 2rem;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       transition: var(--transition-medium);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px); /* Mantendo o blur se desejar */
     }
-    
+
     .menu-mobile.active {
       display: flex;
       animation: fadeIn 0.3s ease;
     }
-    
+
+    .menu-mobile a { /* Melhorando contraste dos links no menu mobile */
+        color: white;
+    }
+
+    .menu-mobile a:hover {
+        color: var(--accent-light); /* Usando laranja claro para hover */
+    }
+
+
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -194,59 +195,42 @@
       transition: var(--transition-medium);
       animation: pulse 2s infinite;
     }
-    
+
     .whatsapp-float:hover {
       transform: translateY(-5px);
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
       background-color: #22c35e;
     }
-    
-    .text-primary {
-      color: var(--primary);
-    }
-    
-    .text-accent {
-      color: var(--accent);
-    }
-    
-    .bg-primary {
-      background-color: var(--primary);
-    }
-    
-    .bg-accent {
-      background-color: var(--accent);
-    }
-    
-    .border-primary {
-      border-color: var(--primary);
-    }
-    
-    .border-accent {
-      border-color: var(--accent);
-    }
-    
+
+    .text-primary { color: var(--primary); }
+    .text-accent { color: var(--accent); }
+    .bg-primary { background-color: var(--primary); }
+    .bg-accent { background-color: var(--accent); }
+    .border-primary { border-color: var(--primary); }
+    .border-accent { border-color: var(--accent); }
+
     .service-card {
       transition: var(--transition-medium);
       border-radius: 1rem;
       border-top: 4px solid transparent;
       overflow: hidden;
     }
-    
+
     .service-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       border-top: 4px solid var(--primary);
     }
-    
+
     .service-card:hover .service-icon {
       transform: scale(1.1);
       background-color: rgba(10, 77, 140, 0.15);
     }
-    
+
     .service-icon {
       transition: var(--transition-medium);
     }
-    
+
     .btn-primary {
       background-color: var(--primary);
       color: white;
@@ -257,16 +241,16 @@
       border: 2px solid var(--primary);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-primary:hover {
       background-color: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
-    
+
     .btn-accent {
       background-color: var(--accent);
-      color: #1a202c;
+      color: #1a202c; /* Texto escuro para bom contraste com laranja */
       padding: 0.7rem 1.5rem;
       border-radius: 0.5rem;
       font-weight: 600;
@@ -274,34 +258,34 @@
       border: 2px solid var(--accent);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-accent:hover {
       background-color: var(--accent-dark);
       transform: translateY(-2px);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
-    
+
     .features-card {
       transition: var(--transition-medium);
     }
-    
+
     .features-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-    
+
     .testimonial-card {
       transition: var(--transition-medium);
       overflow: hidden;
     }
-    
+
     .testimonial-card:hover {
       transform: translateY(-5px) scale(1.01);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    
+
     .testimonial-card::before {
-      content: """;
+      content: "\"";
       position: absolute;
       top: -20px;
       left: 20px;
@@ -309,18 +293,18 @@
       color: rgba(10, 77, 140, 0.1);
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
-    
+
     .plan-card {
       transition: var(--transition-medium);
       position: relative;
       overflow: hidden;
     }
-    
+
     .plan-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    
+
     .plan-card.featured::before {
       content: "Popular";
       position: absolute;
@@ -334,86 +318,87 @@
       transform: rotate(45deg);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     .form-input {
       transition: var(--transition-fast);
       border: 2px solid #e2e8f0;
     }
-    
+
     .form-input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.2);
       outline: none;
     }
-    
+
     .nav-link {
       position: relative;
       transition: var(--transition-fast);
+      padding-bottom: 6px; /* Espaço para a animação do sublinhado */
     }
-    
+
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: 0px; /* Ajustado para ficar logo abaixo do texto */
       left: 0;
       width: 0;
       height: 2px;
       background-color: var(--accent);
       transition: var(--transition-medium);
     }
-    
+
     .nav-link:hover::after {
       width: 100%;
     }
-    
+
     /* Animações */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
+
     @keyframes slideUp {
       from { transform: translateY(20px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-    
+
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-    
+
     /* Header gradiente animado */
     .gradient-text {
-      background: linear-gradient(120deg, #0a4d8c, #ffa500);
+      background: linear-gradient(120deg, var(--primary-light), var(--accent)); /* Usando cores mais claras do seu tema */
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       background-size: 200% 100%;
       animation: gradientMove 5s ease infinite;
     }
-    
+
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    
+
     /* Responsividade */
     @media (max-width: 768px) {
       .desktop-menu {
         display: none;
       }
-      
+
       .menu-toggle {
         display: block;
       }
-      
+
       .hero-bg {
-        background-attachment: scroll;
+        background-attachment: scroll; /* Para melhor performance em mobile */
       }
     }
-    
+
     @media (min-width: 769px) {
       .menu-toggle {
         display: none;
@@ -423,80 +408,70 @@
 </head>
 <body class="antialiased bg-gray-50 text-gray-800">
 
-<!-- Menu Mobile (oculto por padrão) -->
 <div class="menu-mobile" id="mobileMenu">
-  <button onclick="toggleMobileMenu()" class="absolute top-4 right-4 text-white">
-    <i class="fas fa-times fa-2x"></i>
+  <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-white focus:outline-none"> <i class="fas fa-times fa-2x"></i>
   </button>
-  <ul class="text-white text-center space-y-6 text-xl">
-    <li><a href="#home" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Home</a></li>
-    <li><a href="#servicos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Serviços</a></li>
-    <li><a href="#sobre" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Sobre</a></li>
-    <li><a href="#planos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Planos</a></li>
-    <li><a href="#depoimentos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Depoimentos</a></li>
-    <li><a href="#contato" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-400 transition-colors">Contato</a></li>
-    <li class="mt-8">
-      <a href="https://wa.me/5541992741261" target="_blank" class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
-        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+  <ul class="text-white text-center space-y-8 text-xl"> <li><a href="#home" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Home</a></li>
+    <li><a href="#servicos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Serviços</a></li>
+    <li><a href="#sobre" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Sobre</a></li>
+    <li><a href="#planos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Planos</a></li>
+    <li><a href="#depoimentos" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Depoimentos</a></li>
+    <li><a href="#contato" onclick="toggleMobileMenu()" class="block py-2 hover:text-yellow-300 transition-colors">Contato</a></li>
+    <li class="mt-10"> <a href="https://wa.me/5541992741261" target="_blank" class="inline-block bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors text-lg"> <i class="fab fa-whatsapp mr-2"></i> WhatsApp
       </a>
     </li>
   </ul>
 </div>
 
-<!-- Botão flutuante do WhatsApp -->
 <a href="https://wa.me/5541992741261" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
   WhatsApp
 </a>
 
-<!-- ========== HEADER / HERO ========== -->
 <header id="home" class="relative hero-bg h-screen">
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="absolute inset-0 bg-black bg-opacity-75"></div>
 
-  <!-- NAV -->
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative z-10">
-    <a href="#home" class="text-2xl font-bold text-white tracking-wider flex items-center">
-      <span class="gradient-text">BLU <span>Engenharia</span></span>
-    </a>
-    
-    <ul class="hidden md:flex space-x-8 text-white text-sm font-medium desktop-menu">
-      <li><a href="#servicos" class="hover:text-yellow-400 transition nav-link">Serviços</a></li>
-      <li><a href="#sobre" class="hover:text-yellow-400 transition nav-link">Sobre</a></li>
-      <li><a href="#planos" class="hover:text-yellow-400 transition nav-link">Planos</a></li>
-      <li><a href="#depoimentos" class="hover:text-yellow-400 transition nav-link">Depoimentos</a></li>
-      <li><a href="#contato" class="hover:text-yellow-400 transition nav-link">Contato</a></li>
-    </ul>
-    <a href="https://wa.me/5541992741261" target="_blank"
-       class="hidden md:inline-flex items-center bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold shadow hover:bg-yellow-300 transition">
-      <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-    </a>
-    
-    <!-- Botão Menu Mobile -->
-    <button class="menu-toggle md:hidden text-white" onclick="toggleMobileMenu()">
-      <i class="fas fa-bars fa-lg"></i>
-    </button>
+  <nav class="fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-25 backdrop-blur-sm shadow-md transition-all duration-300 ease-in-out">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#home" class="text-2xl font-bold text-white tracking-wider flex items-center">
+        <span class="gradient-text">BLU <span>Engenharia</span></span>
+      </a>
+
+      <ul class="hidden md:flex space-x-6 text-white text-base desktop-menu">
+        <li><a href="#servicos" class="hover:text-yellow-400 transition nav-link">Serviços</a></li>
+        <li><a href="#sobre" class="hover:text-yellow-400 transition nav-link">Sobre</a></li>
+        <li><a href="#planos" class="hover:text-yellow-400 transition nav-link">Planos</a></li>
+        <li><a href="#depoimentos" class="hover:text-yellow-400 transition nav-link">Depoimentos</a></li>
+        <li><a href="#contato" class="hover:text-yellow-400 transition nav-link">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/5541992741261" target="_blank"
+         class="hidden md:inline-flex items-center bg-yellow-500 text-gray-900 px-5 py-2.5 rounded-lg font-semibold shadow-lg hover:bg-yellow-400 transition-colors duration-300 transform hover:scale-105">
+        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+      </a>
+
+      <button class="menu-toggle md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
   </nav>
 
-  <!-- HERO CONTENT -->
-  <div class="container mx-auto px-6 h-full flex items-center relative z-10">
-    <div class="max-w-xl text-white">
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 sr">
-        PMOC e Consultoria HVAC: Especialistas em Climatização em Curitiba
+  <div class="container mx-auto px-6 h-full flex flex-col justify-center items-start relative z-10 text-white pt-24 md:pt-16"> <div class="max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 sr">
+        PMOC e Consultoria HVAC: <span class="text-yellow-400">Especialistas</span> em Climatização em Curitiba
       </h1>
-      <p class="text-lg md:text-xl mb-8 sr">
-        Elabore, mantenha e <span class="font-bold text-yellow-400">otimize</span> seu sistema de climatização com quem entende de engenharia
+      <p class="text-lg md:text-xl mb-8 sr leading-relaxed">
+        Elabore, mantenha e <span class="font-semibold text-yellow-400">otimize</span> seu sistema de climatização com quem entende de engenharia
         e fala a língua do lojista.
-        <span class="bg-yellow-400 text-gray-900 px-2 py-1 rounded-md font-bold inline-block mt-2">Visita técnica gratuita para Curitiba!</span>
+        <span class="block bg-yellow-500 text-gray-900 px-3 py-2 rounded-md font-bold inline-block mt-4 shadow-md">Visita técnica gratuita para Curitiba!</span>
       </p>
       <a href="#contato"
-         class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition inline-flex items-center sr">
-        <i class="fas fa-calendar-check mr-2"></i> Agendar Avaliação Gratuita
+         class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center sr transform hover:scale-105">
+        <i class="fas fa-calendar-check mr-3"></i> Agendar Avaliação Gratuita
       </a>
     </div>
   </div>
 </header>
 
-<!-- ========== SERVIÇOS ========== -->
 <section id="servicos" class="py-20">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold mb-4 sr text-primary">Nossos Serviços de Climatização</h2>
@@ -548,84 +523,80 @@
   </div>
 </section>
 
-    <!-- Extras em destaque -->
-    <h3 class="text-2xl font-bold mb-8 sr text-primary">Diferenciais Exclusivos da BLU Engenharia</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-xl text-left features-card sr">
-        <div class="flex items-start">
-          <i class="fas fa-map-marker-alt text-blue-600 text-2xl mr-4 mt-1"></i>
-          <div>
-            <h4 class="font-semibold mb-2 text-lg">Visita técnica <span class="text-blue-700">gratuita em Curitiba</span></h4>
-            <p class="text-gray-600">Vamos até sua loja ou empresa sem custo para levantamento completo de dados. Demais cidades: consulte deslocamento.</p>
+    <section id="diferenciais" class="py-16 bg-gray-50"> <div class="container mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-12 sr text-primary">Diferenciais Exclusivos da BLU Engenharia</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-xl text-left features-card sr">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-blue-600 text-2xl mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-semibold mb-2 text-lg">Visita técnica <span class="text-blue-700">gratuita em Curitiba</span></h4>
+                <p class="text-gray-600">Vamos até sua loja ou empresa sem custo para levantamento completo de dados. Demais cidades: consulte deslocamento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-xl text-left features-card sr"> <div class="flex items-start">
+              <i class="fas fa-camera text-yellow-600 text-2xl mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-semibold mb-2 text-lg">Checklist digital & relatório fotográfico</h4>
+                <p class="text-gray-600">Você recebe um relatório fotográfico detalhado e checklist online para acompanhar todo o processo com transparência.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-xl text-left features-card sr">
+            <div class="flex items-start">
+              <i class="fas fa-tachometer-alt text-green-600 text-2xl mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-semibold mb-2 text-lg">Dashboard de eficiência energética</h4>
+                <p class="text-gray-600">Indicadores de consumo e alertas de manutenção preventiva para seu sistema de ar condicionado — sem custo adicional.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-xl text-left features-card sr">
+            <div class="flex items-start">
+              <i class="fab fa-whatsapp text-purple-600 text-2xl mr-4 mt-1"></i>
+              <div>
+                <h4 class="font-semibold mb-2 text-lg">Grupo exclusivo de suporte no WhatsApp</h4>
+                <p class="text-gray-600">Acesso direto ao engenheiro especialista em HVAC para questões rápidas, 7 dias por semana.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-xl text-left features-card sr">
-        <div class="flex items-start">
-          <i class="fas fa-camera text-yellow-600 text-2xl mr-4 mt-1"></i>
-          <div>
-            <h4 class="font-semibold mb-2 text-lg">Checklist digital & relatório fotográfico</h4>
-            <p class="text-gray-600">Você recebe um relatório fotográfico detalhado e checklist online para acompanhar todo o processo com transparência.</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-xl text-left features-card sr">
-        <div class="flex items-start">
-          <i class="fas fa-tachometer-alt text-green-600 text-2xl mr-4 mt-1"></i>
-          <div>
-            <h4 class="font-semibold mb-2 text-lg">Dashboard de eficiência energética</h4>
-            <p class="text-gray-600">Indicadores de consumo e alertas de manutenção preventiva para seu sistema de ar condicionado — sem custo adicional.</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-xl text-left features-card sr">
-        <div class="flex items-start">
-          <i class="fab fa-whatsapp text-purple-600 text-2xl mr-4 mt-1"></i>
-          <div>
-            <h4 class="font-semibold mb-2 text-lg">Grupo exclusivo de suporte no WhatsApp</h4>
-            <p class="text-gray-600">Acesso direto ao engenheiro especialista em HVAC para questões rápidas, 7 dias por semana.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Nova seção de FAQ para SEO -->
 <section id="faq" class="py-16 bg-blue-50">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold mb-8 text-center text-primary">Perguntas Frequentes sobre PMOC e Climatização</h2>
-    
+
     <div class="max-w-4xl mx-auto">
       <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-lg font-semibold mb-2">O que é PMOC e por que é obrigatório?</h3>
-        <p class="text-gray-700">O PMOC (Plano de Manutenção, Operação e Controle) é um documento obrigatório por lei (13.589/2018) para todos os estabelecimentos com sistemas de climatização acima de 60.000 BTUs. Ele garante a qualidade do ar interno, eficiência energética e segurança dos ocupantes, sendo exigido pela ANVISA e pelos órgãos de fiscalização.</p>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">O que é PMOC e por que é obrigatório?</h3> <p class="text-gray-700">O PMOC (Plano de Manutenção, Operação e Controle) é um documento obrigatório por lei (13.589/2018) para todos os estabelecimentos com sistemas de climatização acima de 60.000 BTUs. Ele garante a qualidade do ar interno, eficiência energética e segurança dos ocupantes, sendo exigido pela ANVISA e pelos órgãos de fiscalização.</p>
       </div>
-      
+
       <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-lg font-semibold mb-2">Qual a frequência necessária de manutenção para sistemas de ar condicionado comercial?</h3>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">Qual a frequência necessária de manutenção para sistemas de ar condicionado comercial?</h3>
         <p class="text-gray-700">Sistemas de ar condicionado comercial devem ter manutenção preventiva mensal e revisão completa com engenheiro responsável anualmente, conforme normas ABNT e Portaria 3.523 do Ministério da Saúde. A BLU Engenharia oferece planos que incluem todas essas manutenções obrigatórias.</p>
       </div>
-      
+
       <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-lg font-semibold mb-2">Como o PMOC pode reduzir custos operacionais da minha empresa?</h3>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">Como o PMOC pode reduzir custos operacionais da minha empresa?</h3>
         <p class="text-gray-700">Um PMOC bem executado pode reduzir até 30% no consumo de energia, aumentar a vida útil dos equipamentos em até 5 anos e prevenir paradas não programadas que afetam o negócio. Nossa consultoria HVAC especializada identifica oportunidades de economia específicas para cada tipo de sistema.</p>
       </div>
-      
+
       <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-lg font-semibold mb-2">A BLU Engenharia atende outras cidades além de Curitiba?</h3>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">A BLU Engenharia atende outras cidades além de Curitiba?</h3>
         <p class="text-gray-700">Sim. Atendemos Curitiba com visita técnica gratuita e outras cidades do Paraná mediante consulta de deslocamento. Oferecemos também opções de consultoria remota para clientes de todo o Brasil, com suporte técnico especializado via videoconferência e relatórios digitais.</p>
       </div>
-      
+
       <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-lg font-semibold mb-2">Quais são as penalidades para estabelecimentos sem PMOC?</h3>
+        <h3 class="text-lg font-semibold mb-2 text-gray-800">Quais são as penalidades para estabelecimentos sem PMOC?</h3>
         <p class="text-gray-700">Estabelecimentos sem PMOC estão sujeitos a multas que variam de R$ 2.000 a R$ 20.000, interdição do estabelecimento e até suspensão do alvará de funcionamento, dependendo da gravidade da situação. A BLU Engenharia garante a conformidade total com a Lei 13.589/2018, evitando essas penalidades.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== SOBRE ========== -->
 <section id="sobre" class="py-20 bg-gray-100">
   <div class="container mx-auto px-6">
     <div class="md:flex items-center gap-12">
@@ -651,7 +622,7 @@
             <span>Equipe de parceiros certificados para demandas específicas em sistemas de climatização</span>
           </li>
         </ul>
-        
+
         <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
           <p class="font-bold text-lg mb-4 text-primary">Missão · Visão · Valores</p>
           <ul class="space-y-4 text-gray-700">
@@ -687,15 +658,12 @@
   </div>
 </section>
 
-<!-- ========== PLANOS & DESCONTOS ========== -->
 <section id="planos" class="py-20 bg-gradient-to-b from-white to-gray-50">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold mb-4 sr text-primary">Planos de PMOC & Programa de Indicações</h2>
     <p class="text-gray-600 max-w-3xl mx-auto mb-12 sr">Escolha o plano ideal para seu negócio em Curitiba e aproveite descontos exclusivos através do nosso sistema de indicações para seu PMOC e consultoria HVAC.</p>
 
-    <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-8 mb-12">
-      <!-- Premium -->
       <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-blue-600 plan-card featured sr relative hover:z-10">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
         <h3 class="text-xl font-semibold mb-2 text-blue-600">Premium ≤ 5 TR</h3>
@@ -715,7 +683,6 @@
         </a>
       </div>
 
-      <!-- Profissional -->
       <div class="bg-white p-8 rounded-xl shadow-lg border plan-card sr hover:z-10">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-400 to-gray-600"></div>
         <h3 class="text-xl font-semibold mb-2">Profissional 5–10 TR</h3>
@@ -735,7 +702,6 @@
         </a>
       </div>
 
-      <!-- Enterprise -->
       <div class="bg-white p-8 rounded-xl shadow-lg border plan-card sr hover:z-10">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-400 to-gray-600"></div>
         <h3 class="text-xl font-semibold mb-2">Enterprise &gt; 10 TR</h3>
@@ -752,7 +718,6 @@
       </div>
     </div>
 
-    <!-- Regras -->
     <div class="max-w-3xl mx-auto bg-blue-50 border-l-4 border-blue-600 p-8 rounded-xl text-left text-sm sr">
       <h4 class="text-lg font-semibold mb-4 text-blue-700 flex items-center">
         <i class="fas fa-info-circle mr-2"></i>
@@ -792,12 +757,11 @@
   </div>
 </section>
 
-<!-- ========== DEPOIMENTOS ========== -->
 <section id="depoimentos" class="py-20 bg-gray-100">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold mb-4 sr text-primary">O que dizem nossos clientes</h2>
     <p class="text-gray-600 max-w-3xl mx-auto mb-12 sr">Confira a experiência de quem já confiou na BLU Engenharia para cuidar da climatização do seu negócio em Curitiba.</p>
-    
+
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card relative sr">
         <div class="flex justify-center mb-4">
@@ -845,7 +809,6 @@
   </div>
 </section>
 
-<!-- ========== CTA ========== -->
 <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold mb-6 sr">Pronto para transformar sua climatização em vantagem competitiva?</h2>
@@ -854,21 +817,19 @@
     </p>
     <a href="https://wa.me/5541992741261" target="_blank"
        class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition inline-flex items-center sr">
-       <i class="fab fa-whatsapp text-xl mr-3"></i> WhatsApp (41) 99274‑1261
+      <i class="fab fa-whatsapp text-xl mr-3"></i> WhatsApp (41) 99274‑1261
     </a>
   </div>
 </section>
 
-<!-- ========== CONTATO ========== -->
 <section id="contato" class="py-20">
   <div class="container mx-auto px-6">
     <div class="md:flex gap-12 items-center">
-      <!-- Dados -->
       <div class="md:w-1/2 sr mb-12 md:mb-0">
         <h2 class="text-3xl font-bold mb-6 text-primary">Fale Conosco</h2>
         <div class="w-20 h-1 bg-accent mb-8"></div>
         <p class="mb-8 text-gray-700">Dúvidas sobre PMOC, orçamento ou agendamento de visita técnica gratuita? Entre em contato agora mesmo.</p>
-        
+
         <div class="space-y-6">
           <div class="flex items-center">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
@@ -879,7 +840,7 @@
               <p class="font-medium">engenharia@bluengenharia.com</p>
             </div>
           </div>
-          
+
           <div class="flex items-center">
             <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
               <i class="fab fa-whatsapp text-green-600"></i>
@@ -889,7 +850,7 @@
               <p class="font-medium">(41) 99274‑1261</p>
             </div>
           </div>
-          
+
           <div class="flex items-center">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
               <i class="fas fa-map-marker-alt text-primary"></i>
@@ -899,7 +860,7 @@
               <p class="font-medium">Curitiba – PR, Brasil</p>
             </div>
           </div>
-          
+
           <div class="flex items-center">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
               <i class="fas fa-id-card text-primary"></i>
@@ -912,11 +873,10 @@
         </div>
       </div>
 
-      <!-- Formulário -->
       <div class="md:w-1/2 sr">
         <form action="https://formspree.io/f/xayvlzlk" method="POST" class="bg-white p-8 rounded-xl shadow-lg">
           <h3 class="text-2xl font-bold mb-6 text-primary">Solicitar Visita Técnica Gratuita</h3>
-          
+
           <div class="mb-6">
             <label class="block text-sm font-medium mb-2" for="nome">Nome</label>
             <input required class="w-full border border-gray-300 rounded-lg px-4 py-3 form-input" type="text" name="nome" id="nome" placeholder="Seu nome completo">
@@ -929,7 +889,6 @@
             <label class="block text-sm font-medium mb-2" for="mensagem">Mensagem</label>
             <textarea required class="w-full border border-gray-300 rounded-lg px-4 py-3 h-32 form-input" name="mensagem" id="mensagem" placeholder="Como podemos ajudar com seu sistema de climatização?"></textarea>
           </div>
-          <!-- Honeypot antispam -->
           <input type="text" name="_gotcha" style="display:none">
           <button type="submit"
                   class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition w-full font-semibold flex items-center justify-center">
@@ -941,7 +900,6 @@
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
 <footer class="bg-gray-900 text-gray-400 text-sm py-12">
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -971,10 +929,9 @@
   </div>
 </footer>
 
-<!-- ========== ScrollReveal e JavaScript embutidos ========== -->
 <script>
-  // ScrollReveal
-  class ScrollReveal {
+  // ScrollReveal (usando uma implementação simples baseada em IntersectionObserver)
+  class ScrollRevealHandler { // Renomeado para evitar conflito com a classe global que você poderia estar tentando instanciar
     constructor(options = {}) {
       this.options = {
         distance: '40px',
@@ -982,98 +939,113 @@
         easing: 'ease-out',
         origin: 'bottom',
         interval: 100,
+        delay: 0, // Adicionado delay
+        once: true, // Para animar apenas uma vez
         ...options
       };
-      
       this.init();
     }
-    
+
     init() {
       this.elements = document.querySelectorAll('.sr');
       this.observer = new IntersectionObserver(this.handleIntersect.bind(this), {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.1 // Gatilho quando 10% do elemento está visível
       });
-      
+
       this.elements.forEach(el => {
+        el.style.visibility = 'hidden'; // Garante que comece invisível
         this.observer.observe(el);
       });
     }
-    
+
     handleIntersect(entries, observer) {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+          const el = entry.target;
+          // Calcula o delay com base no intervalo e na ordem dos elementos (opcional, pode simplificar)
+          const effectiveDelay = el.dataset.srDelay ? parseInt(el.dataset.srDelay) : (index * this.options.interval) + this.options.delay;
+
           setTimeout(() => {
-            this.revealElement(entry.target);
-          }, index * this.options.interval);
-          
-          observer.unobserve(entry.target);
+            this.revealElement(el);
+          }, effectiveDelay);
+
+          if(this.options.once) {
+            observer.unobserve(el); // Para de observar após a primeira vez
+          }
         }
       });
     }
-    
+
     revealElement(el) {
       el.style.visibility = 'visible';
       el.style.opacity = '0';
-      el.style.transform = this.getTransform();
-      el.style.transition = `opacity ${this.options.duration}ms ${this.options.easing}, transform ${this.options.duration}ms ${this.options.easing}`;
-      
-      setTimeout(() => {
+      el.style.transform = this.getTransform(el.dataset.srOrigin || this.options.origin, el.dataset.srDistance || this.options.distance);
+      // Prioriza data attributes para customização por elemento
+      const duration = el.dataset.srDuration || this.options.duration;
+      const easing = el.dataset.srEasing || this.options.easing;
+
+      el.style.transition = `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
+
+      requestAnimationFrame(() => { // Garante que o browser processe a mudança inicial antes da transição
         el.style.opacity = '1';
-        el.style.transform = 'translate(0, 0)';
-      }, 50);
-    }
-    
-    getTransform() {
-      switch (this.options.origin) {
-        case 'top':
-          return `translate(0, -${this.options.distance})`;
-        case 'bottom':
-          return `translate(0, ${this.options.distance})`;
-        case 'left':
-          return `translate(-${this.options.distance}, 0)`;
-        case 'right':
-          return `translate(${this.options.distance}, 0)`;
-        default:
-          return `translate(0, ${this.options.distance})`;
-      }
-    }
-    
-    reveal(selector, options) {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach(el => {
-        this.observer.observe(el);
+        el.style.transform = 'translate(0, 0) scale(1) rotate(0)'; // Reset para todos os transforms
       });
-      return this;
+    }
+
+    getTransform(origin, distance) {
+      switch (origin) {
+        case 'top':    return `translateY(-${distance})`;
+        case 'bottom': return `translateY(${distance})`;
+        case 'left':   return `translateX(-${distance})`;
+        case 'right':  return `translateX(${distance})`;
+        default:       return `translateY(${distance})`;
+      }
     }
   }
 
   // Iniciar ScrollReveal
-  const sr = new ScrollReveal();
-  
+  document.addEventListener('DOMContentLoaded', () => {
+    const sr = new ScrollRevealHandler({ interval: 50 }); // Reduzi o intervalo para um efeito mais rápido entre itens sequenciais
+  });
+
+
   // Toggle menu mobile
   function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     mobileMenu.classList.toggle('active');
   }
-  
+
   // Smooth scrolling para ancoragens
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      
+
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
+      if (targetId === '#') return; // Evita erro se o href for apenas "#"
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        // Calcula o offset do navbar fixo. Altura do navbar é py-3 (0.75rem * 2 = 1.5rem). 1rem = 16px (geralmente).
+        // Então, 1.5 * 16 = 24px. Adicionar um pouco mais de margem.
+        // Vamos usar getBoundingClientRect para uma altura mais precisa se o conteúdo do navbar mudar.
+        const nav = document.querySelector('nav.fixed');
+        const navHeight = nav ? nav.getBoundingClientRect().height : 80; // Fallback para 80px
+
         window.scrollTo({
-          top: targetElement.offsetTop - 80,
+          top: targetElement.offsetTop - navHeight - 10, // -10 para uma pequena margem extra
           behavior: 'smooth'
         });
+
+        // Se o menu mobile estiver ativo, fecha ao clicar em um link
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+        }
       }
     });
   });
 </script>
-
+</body>
+</html>
