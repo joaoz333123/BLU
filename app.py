@@ -11,6 +11,13 @@ def index():
 @app.route("/teste")
 def teste():
     return render_template("index_teste.html")
+    
+# Puxar o icone
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('.', 'favicon.ico')
+
+
 
 # Servir sitemap.xml
 @app.route('/sitemap.xml')
