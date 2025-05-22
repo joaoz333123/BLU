@@ -1,6 +1,13 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request, redirect
 
 app = Flask(__name__)
+
+@app.before_request
+def redirect_non_www():
+    """Redirect non-www requests to www."""
+    if not request.host.startswith('www.'):
+        new_url = request.url.replace(request.host, 'www.' + request.host, 1)
+        return redirect(new_url, code=301)
 
 # Página principal
 @app.route('/')
