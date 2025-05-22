@@ -4,10 +4,14 @@ app = Flask(__name__)
 
 @app.before_request
 def redirect_non_www():
-    """Redirect non-www requests to www."""
-    if not request.host.startswith('www.'):
-        new_url = request.url.replace(request.host, 'www.' + request.host, 1)
+    """Redirect non-www requests to www if the host is bluengenharia.com."""
+    # Só redireciona se o host for exatamente 'bluengenharia.com'
+    if request.host == 'bluengenharia.com':
+        # Constrói a URL de forma segura, garantindo HTTPS e o host www,
+        # e preservando o caminho completo (path + query string).
+        new_url = f"https://www.bluengenharia.com{request.full_path}"
         return redirect(new_url, code=301)
+    return None # Nenhum redirecionamento se o host não for 'bluengenharia.com'
 
 # Página principal
 @app.route('/')
