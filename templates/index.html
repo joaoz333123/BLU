@@ -26,13 +26,23 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1604079136747-b2ee23fd77aa?auto=format&fit=crop&w=1400&q=80" />
   <meta name="twitter:site" content="@BLUEngenharia" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07VRBGDD6V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07VRBGDD6V');
+</script>
+
   <link rel="canonical" href="https://www.bluengenharia.com" />
 
   <!-- CSS & Fontes -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
 
   <!-- SCHEMA.ORG SEO (Corrigido) -->
@@ -92,49 +102,76 @@
 
 
   <style>
-    :root { --primary: #0a4d8c; --primary-dark: #083b6c; --primary-light: #1a6cb5; --accent: #ffa500; --accent-dark: #e69500; --accent-light: #ffb733; --transition-slow: all 0.5s ease; --transition-medium: all 0.3s ease; --transition-fast: all 0.2s ease; }
+    :root {
+      --primary: #004D40; /* Verde Escuro Sóbrio (Teal Escuro) */
+      --primary-dark: #00382E; /* Mais escuro para hover */
+      --primary-light: #00695C; /* Mais claro */
+      --secondary: #FFB300; /* Amarelo Queimado */
+      --secondary-dark: #E6A100; /* Amarelo Queimado mais escuro para hover */
+      --light-bg: #FFFFFF; /* Branco */
+      --very-light-gray-bg: #F8F9FA; /* Cinza muito claro */
+      --dark-gray-text: #343A40; /* Cinza escuro para texto */
+      --success: #28A745;
+      --danger: #DC3545;
+      --font-headings: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+
+      --transition-slow: all 0.5s ease;
+      --transition-medium: all 0.3s ease;
+      --transition-fast: all 0.2s ease;
+    }
     html { scroll-behavior: smooth; }
-    body { font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; }
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-gray-text);
+      line-height: 1.6;
+      background-color: var(--light-bg); /* Fundo padrão do body */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      color: var(--dark-gray-text); /* Cor padrão para títulos, pode ser var(--primary) em contextos específicos */
+      font-weight: 600; /* Um peso padrão para títulos */
+      margin-bottom: 0.75rem; /* Margem padrão para títulos */
+    }
     .sr { visibility: hidden; }
     .hero-bg { background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1604079136747-b2ee23fd77aa?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; background-attachment: fixed; }
-    .menu-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(10, 77, 140, 0.97); z-index: 50; padding: 2rem; flex-direction: column; align-items: center; justify-content: center; transition: var(--transition-medium); backdrop-filter: blur(8px);}
+    .menu-mobile { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 80, 158, 0.97); z-index: 50; padding: 2rem; flex-direction: column; align-items: center; justify-content: center; transition: var(--transition-medium); backdrop-filter: blur(8px);}
     .menu-mobile.active { display: flex; animation: fadeIn 0.3s ease; }
-    .menu-mobile a { color: white; }
-    .menu-mobile a:hover { color: var(--accent-light); }
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white; border-radius: 50px; padding: 12px 22px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2); z-index: 40; text-decoration: none; font-weight: 600; transition: var(--transition-medium); animation: pulse 2s infinite; }
-    .whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); background-color: #22c35e; }
+    .menu-mobile a { color: var(--light-bg); } /* Usando branco do tema */
+    .menu-mobile a:hover { color: var(--secondary); }
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: var(--success); color: white; border-radius: 50px; padding: 12px 22px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2); z-index: 40; text-decoration: none; font-weight: 600; transition: var(--transition-medium); animation: pulse 2s infinite; }
+    .whatsapp-float:hover { transform: translateY(-5px); box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); background-color: #218838; } /* Tom mais escuro de verde */
     .text-primary { color: var(--primary);}
-    .text-accent { color: var(--accent);}
+    .text-secondary { color: var(--secondary);} /* Renomeado de .text-accent */
     .bg-primary { background-color: var(--primary);}
-    .bg-accent { background-color: var(--accent);}
+    .bg-secondary { background-color: var(--secondary);} /* Renomeado de .bg-accent */
     .border-primary { border-color: var(--primary);}
-    .border-accent { border-color: var(--accent);}
-    .service-card { transition: var(--transition-medium); border-radius: 1rem; border-top: 4px solid transparent; overflow: hidden; }
+    .border-secondary { border-color: var(--secondary);} /* Renomeado de .border-accent */
+    .service-card { transition: var(--transition-medium); border-radius: 1rem; border-top: 4px solid transparent; overflow: hidden; background-color: var(--light-bg); } /* Adicionado bg */
     .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); border-top: 4px solid var(--primary);}
-    .service-card:hover .service-icon { transform: scale(1.1); background-color: rgba(10, 77, 140, 0.15);}
-    .service-icon { transition: var(--transition-medium);}
+    .service-card:hover .service-icon { transform: scale(1.1); background-color: rgba(0, 77, 64, 0.1); } /* Ajustado alpha com novo primary */
+    .service-icon { transition: var(--transition-medium); background-color: rgba(0, 77, 64, 0.05); } /* Cor base mais sutil com novo primary */
     .btn-primary { background-color: var(--primary); color: white; padding: 0.7rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: var(--transition-medium); border: 2px solid var(--primary); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
     .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);}
-    .btn-accent { background-color: var(--accent); color: #1a202c; padding: 0.7rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: var(--transition-medium); border: 2px solid var(--accent); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
-    .btn-accent:hover { background-color: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);}
-    .features-card { transition: var(--transition-medium);}
+    .btn-secondary { background-color: var(--secondary); color: var(--dark-gray-text); padding: 0.7rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: var(--transition-medium); border: 2px solid var(--secondary); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+    .btn-secondary:hover { background-color: var(--secondary-dark); color: var(--dark-gray-text); transform: translateY(-2px); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);}
+    .features-card { transition: var(--transition-medium); background-color: var(--light-bg); } 
     .features-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);}
-    .testimonial-card { transition: var(--transition-medium); overflow: hidden;}
+    .testimonial-card { transition: var(--transition-medium); overflow: hidden; background-color: var(--light-bg); } 
     .testimonial-card:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);}
-    .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 150px; color: rgba(10, 77, 140, 0.1); font-family: Georgia, 'Times New Roman', Times, serif;}
-    .plan-card { transition: var(--transition-medium); position: relative; overflow: hidden;}
+    .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 150px; color: rgba(0, 77, 64, 0.08); font-family: Georgia, 'Times New Roman', Times, serif;} /* Ajustado alpha com novo primary */
+    .plan-card { transition: var(--transition-medium); position: relative; overflow: hidden; background-color: var(--light-bg); } 
     .plan-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);}
-    .plan-card.featured::before { content: "Popular"; position: absolute; top: 12px; right: -30px; background-color: var(--accent); color: #1a202c; padding: 2px 30px; font-size: 12px; font-weight: 700; transform: rotate(45deg); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);}
-    .form-input { transition: var(--transition-fast); border: 2px solid #e2e8f0;}
-    .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.2); outline: none;}
+    .plan-card.featured::before { content: "Popular"; position: absolute; top: 12px; right: -30px; background-color: var(--secondary); color: var(--dark-gray-text); padding: 2px 30px; font-size: 12px; font-weight: 700; transform: rotate(45deg); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);} /* Updated color */
+    .form-input { transition: var(--transition-fast); border: 2px solid #ced4da; background-color: var(--light-bg); color: var(--dark-gray-text); } 
+    .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.25); outline: none;} /* Ajustado alpha com novo primary */
     .nav-link { position: relative; transition: var(--transition-fast); padding-bottom: 6px;}
-    .nav-link::after { content: ""; position: absolute; bottom: 0px; left: 0; width: 0; height: 2px; background-color: var(--accent); transition: var(--transition-medium);}
+    .nav-link::after { content: ""; position: absolute; bottom: 0px; left: 0; width: 0; height: 2px; background-color: var(--primary); transition: var(--transition-medium);} /* Alterado para var(--primary) */
     .nav-link:hover::after { width: 100%;}
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-    .gradient-text { background: linear-gradient(120deg, var(--primary-light), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 200% 100%; animation: gradientMove 5s ease infinite;}
-    @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    /* .gradient-text e @keyframes gradientMove removidos */
     @media (max-width: 768px) { .desktop-menu { display: none;} .menu-toggle { display: block;} .hero-bg { background-attachment: scroll; } }
     @media (min-width: 769px) { .menu-toggle { display: none;}}
   </style>
@@ -160,135 +197,147 @@
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
   <!-- HEADER -->
-  <header id="home" class="relative hero-bg h-screen" role="banner">
-    <div class="absolute inset-0 bg-black bg-opacity-75"></div>
-    <nav class="fixed top-0 left-0 right-0 z-20 bg-black bg-opacity-25 backdrop-blur-sm shadow-md transition-all duration-300 ease-in-out" role="navigation" aria-label="Navegação principal">
+  <header id="home" class="relative" style="background-color: var(--light-bg);" role="banner">
+    <nav class="fixed top-0 left-0 right-0 z-20 shadow-md transition-all duration-300 ease-in-out" style="background-color: var(--very-light-gray-bg);" role="navigation" aria-label="Navegação principal">
       <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <a href="#home" class="text-2xl font-bold text-white tracking-wider flex items-center">
-          <span class="gradient-text">BLU <span>Engenharia</span></span>
+        <a href="#home" class="text-2xl font-bold tracking-wider flex items-center">
+          <span style="color: var(--primary);">BLU <span style="color: var(--secondary);">Engenharia</span></span>
         </a>
-        <ul class="hidden md:flex space-x-6 text-white text-base desktop-menu">
-          <li><a href="#servicos" class="hover:text-yellow-400 transition nav-link">Serviços</a></li>
-          <li><a href="#sobre" class="hover:text-yellow-400 transition nav-link">Sobre</a></li>
-          <li><a href="#planos" class="hover:text-yellow-400 transition nav-link">Planos</a></li>
-          <li><a href="#depoimentos" class="hover:text-yellow-400 transition nav-link">Depoimentos</a></li>
-          <li><a href="#contato" class="hover:text-yellow-400 transition nav-link">Contato</a></li>
+        <ul class="hidden md:flex space-x-6 text-base desktop-menu">
+          <li><a href="#servicos" class="transition nav-link" style="color: var(--primary);">Serviços</a></li>
+          <li><a href="#sobre" class="transition nav-link" style="color: var(--primary);">Sobre</a></li>
+          <li><a href="#planos" class="transition nav-link" style="color: var(--primary);">Planos</a></li>
+          <li><a href="#depoimentos" class="transition nav-link" style="color: var(--primary);">Depoimentos</a></li>
+          <li><a href="#contato" class="transition nav-link" style="color: var(--primary);">Contato</a></li>
         </ul>
-        <a href="https://wa.me/5541992741261" target="_blank" rel="noopener" class="hidden md:inline-flex items-center bg-yellow-500 text-gray-900 px-5 py-2.5 rounded-lg font-semibold shadow-lg hover:bg-yellow-400 transition-colors duration-300 transform hover:scale-105">
+        <a href="https://wa.me/5541992741261" target="_blank" rel="noopener" class="btn-secondary hidden md:inline-flex items-center px-5 py-2.5 rounded-lg font-semibold shadow-lg transition-colors duration-300 transform hover:scale-105">
           <i class="fab fa-whatsapp mr-2"></i> WhatsApp
         </a>
-        <a href="tel:+5541992741261" class="hidden md:inline-flex items-center ml-4 text-white underline font-semibold hover:text-yellow-300 transition">Ligar</a>
-        <button class="menu-toggle md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()" aria-label="Abrir menu mobile">
+        <a href="tel:+5541992741261" class="hidden md:inline-flex items-center ml-4 underline font-semibold transition" style="color: var(--primary);">Ligar</a>
+        <button class="menu-toggle md:hidden focus:outline-none" style="color: var(--primary);" onclick="toggleMobileMenu()" aria-label="Abrir menu mobile">
           <i class="fas fa-bars fa-lg"></i>
         </button>
       </div>
     </nav>
-    <div class="container mx-auto px-6 h-full flex flex-col justify-center items-start relative z-10 text-white pt-24 md:pt-16">
-      <div class="max-w-2xl">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 sr">
-          PMOC e Consultoria HVAC: <span class="text-yellow-400">Especialistas</span> em Sistemas de Ar Condicionado
-        </h1>
-        <p class="text-lg md:text-xl mb-8 sr leading-relaxed">
-          Elabore, mantenha e <span class="font-semibold text-yellow-400">entenda</span> seu sistema de climatização com quem entende de engenharia e fala a língua do cliente.
-          <span class="block bg-yellow-500 text-gray-900 px-3 py-2 rounded-md font-bold inline-block mt-4 shadow-md">Visita técnica gratuita para Curitiba!</span>
-        </p>
-        <a href="#contato" class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-yellow-400 transition-colors duration-300 inline-flex items-center sr transform hover:scale-105">
-          <i class="fas fa-calendar-check mr-3"></i> Agendar Avaliação Gratuita
-        </a>
+    <div class="container mx-auto px-6 flex flex-col justify-center items-start relative z-10 pt-32 md:pt-40">
+      <div class="flex flex-wrap md:flex-nowrap items-center min-h-[70vh] md:min-h-[80vh] py-12">
+        <!-- Coluna da Esquerda (Texto) -->
+        <div class="w-full md:w-1/2 lg:w-3/5 text-left md:pr-8 lg:pr-12">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 sr">
+            PMOC e Consultoria HVAC: Especialistas em Sistemas de Ar Condicionado
+          </h1>
+          <h2 class="text-4xl sm:text-5xl font-bold mb-4" style="color: var(--primary);">Soluções em Climatização e PMOC</h2>
+          <p class="text-lg md:text-xl mb-4 leading-relaxed" style="color: var(--dark-gray-text);">
+            Projetamos, implementamos e mantemos sistemas de climatização eficientes e em conformidade.
+          </p>
+          <p class="text-lg md:text-xl mb-8 leading-relaxed" style="color: var(--dark-gray-text);">
+            Oferecemos consultoria especializada em HVAC para otimizar seu ambiente e custos.
+          </p>
+          <p class="text-md mt-6 font-semibold" style="color: var(--primary);">Visita técnica gratuita para Curitiba e região.</p>
+          <a href="#contato" class="btn-secondary px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition-colors duration-300 inline-flex items-center transform hover:scale-105 mt-8">
+            <i class="fas fa-calendar-check mr-3"></i> Agendar Avaliação Gratuita
+          </a>
+        </div>
+        <!-- Coluna da Direita (Imagem Placeholder) -->
+        <div class="w-full md:w-1/2 lg:w-2/5 mt-8 md:mt-0">
+          <img src="https://images.pexels.com/photos/6957085/pexels-photo-6957085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+               alt="Sistema de tubulações de refrigeração industrial em ambiente claro" 
+               class="w-full h-auto max-h-[550px] object-cover rounded-lg shadow-lg">
+        </div>
       </div>
     </div>
   </header>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="py-20">
+  <section id="servicos" class="py-20" style="background-color: var(--light-bg);">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4 sr text-primary">Nossos Serviços de Climatização</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto mb-12 sr">Soluções completas para seu sistema de climatização, com foco em eficiência energética, conforto térmico e conformidade com a Lei 13.589/2018.</p>
+      <h2 class="text-3xl font-bold mb-12 sr" style="color: var(--primary); text-align: center;">Nossos Serviços de Climatização</h2>
+      <p class="max-w-3xl mx-auto mb-12 sr" style="color: var(--medium-gray-text);">Soluções completas para seu sistema de climatização, com foco em eficiência energética, conforto térmico e conformidade com a Lei 13.589/2018.</p>
       <div class="grid md:grid-cols-3 gap-8 mb-16">
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-file-contract text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-file-contract text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">PMOC Completo</h3>
-          <p class="text-gray-600">Documentação completa + ART + revisão anual. Tudo em conformidade com a Lei 13.589/2018.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">PMOC Completo</h3>
+          <p style="color: var(--medium-gray-text);">Documentação completa + ART + revisão anual. Tudo em conformidade com a Lei 13.589/2018.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-cogs text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-cogs text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">Consultoria HVAC</h3>
-          <p class="text-gray-600">Relatórios e laudos técnicos, Economia de energia, otimização de capacidade e análise de vida útil dos equipamentos.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">Consultoria HVAC</h3>
+          <p style="color: var(--medium-gray-text);">Relatórios e laudos técnicos, Economia de energia, otimização de capacidade e análise de vida útil dos equipamentos.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-headset text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-headset text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">Suporte Contínuo</h3>
-          <p class="text-gray-600">Acompanhamento remoto, orientação durante fiscalizações e canal direto com engenheiro responsável CREA-PR.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">Suporte Contínuo</h3>
+          <p style="color: var(--medium-gray-text);">Acompanhamento remoto, orientação durante fiscalizações e canal direto com engenheiro responsável CREA-PR.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-tools text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-tools text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">Consultoria Técnica</h3>
-          <p class="text-gray-600">Análise de desempenho, orientação em campo e apoio em decisões operacionais com base em normas técnicas.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">Consultoria Técnica</h3>
+          <p style="color: var(--medium-gray-text);">Análise de desempenho, orientação em campo e apoio em decisões operacionais com base em normas técnicas.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-drafting-compass text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-drafting-compass text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">Revisão de Projetos</h3>
-          <p class="text-gray-600">Validação de projetos de climatização, verificação de conformidade com normas e recomendações de melhoria.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">Revisão de Projetos</h3>
+          <p style="color: var(--medium-gray-text);">Validação de projetos de climatização, verificação de conformidade com normas e recomendações de melhoria.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl service-card sr">
-          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full service-icon">
-            <i class="fas fa-tasks text-3xl text-primary"></i>
+        <div class="p-8 rounded-xl service-card sr" style="background-color: var(--light-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+          <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full service-icon" style="background-color: rgba(0, 77, 64, 0.1);">
+            <i class="fas fa-tasks text-3xl" style="color: var(--primary);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3 text-primary">Criação de Backlogs</h3>
-          <p class="text-gray-600">Estruturação de backlog técnico para visibilidade e entendimento da atual situação dos equipamentos instalados.</p>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--primary); font-weight: 600;">Criação de Backlogs</h3>
+          <p style="color: var(--medium-gray-text);">Estruturação de backlog técnico para visibilidade e entendimento da atual situação dos equipamentos instalados.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- DIFERENCIAIS -->
-  <section id="diferenciais" class="py-16 bg-gray-50">
+  <section id="diferenciais" class="py-20" style="background-color: var(--very-light-gray-bg);">
     <div class="container mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold mb-12 sr text-primary">Diferenciais Exclusivos da BLU Engenharia</h3>
+      <h2 class="text-3xl font-bold mb-12 sr" style="color: var(--primary); text-align: center;">Diferenciais Exclusivos da BLU Engenharia</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-xl text-left features-card sr">
+        <div class="border-l-4 p-6 rounded-xl text-left features-card sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-color: var(--primary);">
           <div class="flex items-start">
-            <i class="fas fa-map-marker-alt text-blue-600 text-2xl mr-4 mt-1"></i>
+            <i class="fas fa-map-marker-alt text-2xl mr-4 mt-1" style="color: var(--primary);"></i>
             <div>
-              <h4 class="font-semibold mb-2 text-lg">Visita técnica <span class="text-blue-700">gratuita em Curitiba</span></h4>
-              <p class="text-gray-600">Vamos até sua loja ou empresa sem custo para levantamento completo de dados. Demais cidades: consulte deslocamento.</p>
+              <h4 class="font-semibold mb-2 text-lg" style="color: var(--primary);">Visita técnica <span style="color: var(--primary-dark);">gratuita em Curitiba</span></h4>
+              <p style="color: var(--medium-gray-text);">Vamos até sua loja ou empresa sem custo para levantamento completo de dados. Demais cidades: consulte deslocamento.</p>
             </div>
           </div>
         </div>
-        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-xl text-left features-card sr">
+        <div class="border-l-4 p-6 rounded-xl text-left features-card sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-color: var(--primary);">
           <div class="flex items-start">
-            <i class="fas fa-camera text-yellow-600 text-2xl mr-4 mt-1"></i>
+            <i class="fas fa-camera text-2xl mr-4 mt-1" style="color: var(--primary);"></i>
             <div>
-              <h4 class="font-semibold mb-2 text-lg">Checklist digital & relatório fotográfico</h4>
-              <p class="text-gray-600">Você recebe um relatório fotográfico detalhado e checklist online para acompanhar todo o processo com transparência.</p>
+              <h4 class="font-semibold mb-2 text-lg" style="color: var(--primary);">Checklist digital & relatório fotográfico</h4>
+              <p style="color: var(--medium-gray-text);">Você recebe um relatório fotográfico detalhado e checklist online para acompanhar todo o processo com transparência.</p>
             </div>
           </div>
         </div>
-        <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-xl text-left features-card sr">
+        <div class="border-l-4 p-6 rounded-xl text-left features-card sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-color: var(--primary);">
           <div class="flex items-start">
-            <i class="fas fa-tachometer-alt text-green-600 text-2xl mr-4 mt-1"></i>
+            <i class="fas fa-tachometer-alt text-2xl mr-4 mt-1" style="color: var(--primary);"></i>
             <div>
-              <h4 class="font-semibold mb-2 text-lg">Dashboard de eficiência energética</h4>
-              <p class="text-gray-600">Indicadores de consumo e alertas de manutenção preventiva para seu sistema de ar condicionado — sem custo adicional.</p>
+              <h4 class="font-semibold mb-2 text-lg" style="color: var(--primary);">Dashboard de eficiência energética</h4>
+              <p style="color: var(--medium-gray-text);">Indicadores de consumo e alertas de manutenção preventiva para seu sistema de ar condicionado — sem custo adicional.</p>
             </div>
           </div>
         </div>
-        <div class="bg-purple-50 border-l-4 border-purple-600 p-6 rounded-xl text-left features-card sr">
+        <div class="border-l-4 p-6 rounded-xl text-left features-card sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-color: var(--primary);">
           <div class="flex items-start">
-            <i class="fab fa-whatsapp text-purple-600 text-2xl mr-4 mt-1"></i>
+            <i class="fab fa-whatsapp text-2xl mr-4 mt-1" style="color: var(--primary);"></i>
             <div>
-              <h4 class="font-semibold mb-2 text-lg">Grupo exclusivo de suporte no WhatsApp</h4>
-              <p class="text-gray-600">Acesso direto ao engenheiro especialista em HVAC para questões rápidas, 7 dias por semana.</p>
+              <h4 class="font-semibold mb-2 text-lg" style="color: var(--primary);">Grupo exclusivo de suporte no WhatsApp</h4>
+              <p style="color: var(--medium-gray-text);">Acesso direto ao engenheiro especialista em HVAC para questões rápidas, 7 dias por semana.</p>
             </div>
           </div>
         </div>
@@ -297,60 +346,60 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-16 bg-blue-50">
+  <section id="faq" class="py-20" style="background-color: var(--light-bg);">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-8 text-center text-primary">Perguntas Frequentes sobre PMOC e Climatização</h2>
+      <h2 class="text-3xl font-bold sr text-center" style="color: var(--primary); margin-bottom: 3rem;">Perguntas Frequentes sobre PMOC e Climatização</h2>
       <div class="max-w-4xl mx-auto">
-        <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">O que é PMOC e por que é obrigatório?</h3>
-          <p class="text-gray-700">O PMOC (Plano de Manutenção, Operação e Controle) é um documento obrigatório por lei (13.589/2018) para todos os estabelecimentos com sistemas de climatização acima de 60.000 BTUs. Ele garante a qualidade do ar interno, eficiência energética e segurança dos ocupantes, sendo exigido pela ANVISA e pelos órgãos de fiscalização.</p>
+        <div class="mb-6 rounded-lg shadow-md p-6" style="background-color: var(--very-light-gray-bg);">
+          <h3 class="text-lg font-semibold mb-2" style="color: var(--dark-gray-text);">O que é PMOC e por que é obrigatório?</h3>
+          <p style="color: var(--dark-gray-text);">O PMOC (Plano de Manutenção, Operação e Controle) é um documento obrigatório por lei (13.589/2018) para todos os estabelecimentos com sistemas de climatização acima de 60.000 BTUs. Ele garante a qualidade do ar interno, eficiência energética e segurança dos ocupantes, sendo exigido pela ANVISA e pelos órgãos de fiscalização.</p>
         </div>
-        <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Qual a frequência necessária de manutenção para sistemas de ar condicionado comercial?</h3>
-          <p class="text-gray-700">Sistemas de ar condicionado comercial devem ter manutenção preventiva mensal e revisão completa com engenheiro responsável anualmente, conforme normas ABNT e Portaria 3.523 do Ministério da Saúde. A BLU Engenharia oferece planos que incluem todas essas manutenções obrigatórias.</p>
+        <div class="mb-6 rounded-lg shadow-md p-6" style="background-color: var(--very-light-gray-bg);">
+          <h3 class="text-lg font-semibold mb-2" style="color: var(--dark-gray-text);">Qual a frequência necessária de manutenção para sistemas de ar condicionado comercial?</h3>
+          <p style="color: var(--dark-gray-text);">Sistemas de ar condicionado comercial devem ter manutenção preventiva mensal e revisão completa com engenheiro responsável anualmente, conforme normas ABNT e Portaria 3.523 do Ministério da Saúde. A BLU Engenharia oferece planos que incluem todas essas manutenções obrigatórias.</p>
         </div>
-        <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Como o PMOC pode reduzir custos operacionais da minha empresa?</h3>
-          <p class="text-gray-700">Um PMOC bem executado pode reduzir até 30% no consumo de energia, aumentar a vida útil dos equipamentos em até 5 anos e prevenir paradas não programadas que afetam o negócio. Nossa consultoria HVAC especializada identifica oportunidades de economia específicas para cada tipo de sistema.</p>
+        <div class="mb-6 rounded-lg shadow-md p-6" style="background-color: var(--very-light-gray-bg);">
+          <h3 class="text-lg font-semibold mb-2" style="color: var(--dark-gray-text);">Como o PMOC pode reduzir custos operacionais da minha empresa?</h3>
+          <p style="color: var(--dark-gray-text);">Um PMOC bem executado pode reduzir até 30% no consumo de energia, aumentar a vida útil dos equipamentos em até 5 anos e prevenir paradas não programadas que afetam o negócio. Nossa consultoria HVAC especializada identifica oportunidades de economia específicas para cada tipo de sistema.</p>
         </div>
-        <div class="mb-6 bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">A BLU Engenharia atende outras cidades além de Curitiba?</h3>
-          <p class="text-gray-700">Sim. Atendemos Curitiba com visita técnica gratuita e outras cidades do Paraná mediante consulta de deslocamento. Oferecemos também opções de consultoria remota para clientes de todo o Brasil, com suporte técnico especializado via videoconferência e relatórios digitais.</p>
+        <div class="mb-6 rounded-lg shadow-md p-6" style="background-color: var(--very-light-gray-bg);">
+          <h3 class="text-lg font-semibold mb-2" style="color: var(--dark-gray-text);">A BLU Engenharia atende outras cidades além de Curitiba?</h3>
+          <p style="color: var(--dark-gray-text);">Sim. Atendemos Curitiba com visita técnica gratuita e outras cidades do Paraná mediante consulta de deslocamento. Oferecemos também opções de consultoria remota para clientes de todo o Brasil, com suporte técnico especializado via videoconferência e relatórios digitais.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Quais são as penalidades para estabelecimentos sem PMOC?</h3>
-          <p class="text-gray-700">Estabelecimentos sem PMOC estão sujeitos a multas que variam de R$ 2.000 a R$ 20.000, interdição do estabelecimento e até suspensão do alvará de funcionamento, dependendo da gravidade da situação. A BLU Engenharia garante a conformidade total com a Lei 13.589/2018, evitando essas penalidades.</p>
+        <div class="rounded-lg shadow-md p-6" style="background-color: var(--very-light-gray-bg);">
+          <h3 class="text-lg font-semibold mb-2" style="color: var(--dark-gray-text);">Quais são as penalidades para estabelecimentos sem PMOC?</h3>
+          <p style="color: var(--dark-gray-text);">Estabelecimentos sem PMOC estão sujeitos a multas que variam de R$ 2.000 a R$ 20.000, interdição do estabelecimento e até suspensão do alvará de funcionamento, dependendo da gravidade da situação. A BLU Engenharia garante a conformidade total com a Lei 13.589/2018, evitando essas penalidades.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SOBRE -->
-  <section id="sobre" class="py-20 bg-gray-100">
+  <section id="sobre" class="py-20" style="background-color: var(--very-light-gray-bg);">
     <div class="container mx-auto px-6">
       <div class="md:flex items-center gap-12">
         <div class="md:w-1/2 sr">
-          <h2 class="text-3xl font-bold mb-6 text-primary">Quem Somos</h2>
-          <div class="w-20 h-1 bg-accent mb-8"></div>
-          <p class="mb-6 text-gray-700 leading-relaxed">
-            A <strong class="text-primary">BLU Engenharia</strong> nasceu para descomplicar a vida do lojista e empresários em Curitiba. Unimos
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--primary);">Quem Somos</h2>
+          <div class="w-20 h-1 mb-8" style="background-color: var(--secondary);"></div>
+          <p class="mb-6 leading-relaxed" style="color: var(--dark-gray-text);">
+            A <strong style="color: var(--primary);">BLU Engenharia</strong> nasceu para descomplicar a vida do lojista e empresários em Curitiba. Unimos
             <span class="font-semibold">engenharia de alto nível</span> com atendimento humanizado, entregando PMOC completo e consultoria HVAC especializada que realmente agregam valor ao seu negócio, garantindo eficiência energética e conformidade com a Lei 13.589/2018.
           </p>
-          <ul class="space-y-3 mb-6 text-gray-700">
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span>8+ anos em facilities, aeroportos e shopping centers</span></li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span>Engenheiro responsável registrado CREA‑PR</span></li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span>Equipe de parceiros certificados para demandas específicas em sistemas de climatização</span></li>
+          <ul class="space-y-3 mb-6" style="color: var(--dark-gray-text);">
+            <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--success);"></i> <span>8+ anos em facilities, aeroportos e shopping centers</span></li>
+            <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--success);"></i> <span>Engenheiro responsável registrado CREA‑PR</span></li>
+            <li class="flex items-center"><i class="fas fa-check-circle mr-2" style="color: var(--success);"></i> <span>Equipe de parceiros certificados para demandas específicas em sistemas de climatização</span></li>
           </ul>
-          <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
-            <p class="font-bold text-lg mb-4 text-primary">Missão · Visão · Valores</p>
-            <ul class="space-y-4 text-gray-700">
-              <li class="flex items-start"><i class="fas fa-bullseye text-primary mt-1 mr-3"></i>
+          <div class="p-6 rounded-lg shadow-lg mt-8" style="background-color: var(--light-bg);">
+            <p class="font-bold text-lg mb-4" style="color: var(--primary);">Missão · Visão · Valores</p>
+            <ul class="space-y-4" style="color: var(--dark-gray-text);">
+              <li class="flex items-start"><i class="fas fa-bullseye mt-1 mr-3" style="color: var(--primary);"></i>
                 <div><strong>Missão</strong>: garantir ambientes climatizados saudáveis, seguros e eficientes para empresas e estabelecimentos comerciais.</div>
               </li>
-              <li class="flex items-start"><i class="fas fa-eye text-primary mt-1 mr-3"></i>
+              <li class="flex items-start"><i class="fas fa-eye mt-1 mr-3" style="color: var(--primary);"></i>
                 <div><strong>Visão</strong>: ser referência nacional em PMOC e consultoria HVAC para o setor de varejo e empresarial.</div>
               </li>
-              <li class="flex items-start"><i class="fas fa-heart text-primary mt-1 mr-3"></i>
+              <li class="flex items-start"><i class="fas fa-heart mt-1 mr-3" style="color: var(--primary);"></i>
                 <div><strong>Valores</strong>: ética profissional, precisão técnica, compromisso com resultados e satisfação do cliente.</div>
               </li>
             </ul>
@@ -358,7 +407,7 @@
         </div>
         <div class="md:w-1/2 mt-8 md:mt-0 sr">
           <div class="rounded-xl shadow-xl overflow-hidden relative">
-            <div class="absolute inset-0 bg-primary bg-opacity-10"></div>
+            <div class="absolute inset-0" style="background-color: var(--primary); opacity:0.1;"></div>
             <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80"
                  alt="Equipe BLU Engenharia especialista em PMOC e sistemas HVAC em Curitiba"
                  class="rounded-xl w-full hover:scale-105 transition-transform duration-700" />
@@ -368,66 +417,67 @@
     </div>
   </section>
   <!-- PLANOS -->
-  <section id="planos" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <section id="planos" class="py-20" style="background-color: var(--light-bg);">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4 sr text-primary">
+      <h2 class="text-3xl font-bold mb-12 sr" style="color: var(--primary); text-align: center;">
         Planos de PMOC & Programa de Indicações
       </h2>
-      <p class="text-gray-600 max-w-3xl mx-auto mb-12 sr">
+      <p class="max-w-3xl mx-auto mb-12 sr" style="color: var(--medium-gray-text);">
         Escolha o plano ideal para seu negócio em Curitiba e aproveite descontos exclusivos através do nosso sistema de indicações para seu PMOC e consultoria HVAC.
       </p>
       <div class="grid md:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-blue-600 plan-card featured sr relative hover:z-10">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"></div>
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">Premium ≤ 5 TR</h3>
-          <p class="text-sm font-medium mb-1 text-gray-500">1.º ano · pagto à vista</p>
-          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center">
-            <span class="text-lg mr-1">R$</span> 1 000
+        <!-- Card Featured -->
+        <div class="p-8 rounded-xl plan-card featured sr relative hover:z-10" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 2px solid var(--primary);">
+          <span class="text-xs font-semibold absolute top-4 right-4 px-2 py-1 rounded" style="color: var(--primary); background-color: rgba(0, 77, 64, 0.1);">MAIS POPULAR</span>
+          <h3 class="text-xl font-semibold mb-2" style="color: var(--primary);">Premium ≤ 5 TR</h3>
+          <p class="text-sm font-medium mb-1" style="color: var(--medium-gray-text);">1.º ano · pagto à vista</p>
+          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center" style="color: var(--primary);">
+            <span class="text-lg mr-1">R$</span> 1000
           </p>
-          <div class="bg-blue-50 rounded-lg p-3 mb-4">
-            <p class="text-sm">PMOC completo + extras <br />visita gratuita em Curitiba</p>
+          <div class="rounded-lg p-3 mb-4" style="background-color: var(--very-light-gray-bg);">
+            <p class="text-sm" style="color: var(--dark-gray-text);">PMOC completo + extras <br />visita gratuita em Curitiba</p>
           </div>
-          <p class="text-sm font-semibold mb-6 bg-yellow-50 p-2 rounded-lg">
-            Renovação: de <s class="text-red-500">R$ 1 200</s> até <span class="text-blue-600">R$ 700</span>
+          <p class="text-sm font-semibold mb-6 p-2 rounded-lg" style="background-color: rgba(255, 179, 0, 0.1); color: var(--dark-gray-text);">
+            Renovação: de <s style="color: var(--danger);">R$ 1200</s> até <span style="color: var(--primary-dark);">R$ 700</span>
           </p>
-          <a href="https://wa.me/5541992741261" target="_blank" class="block bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
+          <a href="https://wa.me/5541992741261" target="_blank" class="btn-primary block w-full py-3 rounded-lg flex items-center justify-center">
             <i class="fab fa-whatsapp mr-2"></i> Contratar
           </a>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg border plan-card sr hover:z-10">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-400 to-gray-600"></div>
-          <h3 class="text-xl font-semibold mb-2">Profissional 5–10 TR</h3>
-          <p class="text-sm font-medium mb-1 text-gray-500">1.º ano · pagto à vista</p>
-          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center">
-            <span class="text-lg mr-1">R$</span> 1 800
+        <!-- Card Normal 1 -->
+        <div class="p-8 rounded-xl plan-card sr hover:z-10" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #dee2e6;">
+          <h3 class="text-xl font-semibold mb-2" style="color: var(--dark-gray-text);">Profissional 5–10 TR</h3>
+          <p class="text-sm font-medium mb-1" style="color: var(--medium-gray-text);">1.º ano · pagto à vista</p>
+          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center" style="color: var(--primary);">
+            <span class="text-lg mr-1">R$</span> 1800
           </p>
-          <div class="bg-gray-50 rounded-lg p-3 mb-4">
-            <p class="text-sm">Escopo ampliado & SLA em até 48 h</p>
+          <div class="rounded-lg p-3 mb-4" style="background-color: var(--very-light-gray-bg);">
+            <p class="text-sm" style="color: var(--dark-gray-text);">Escopo ampliado & SLA em até 48 h</p>
           </div>
-          <p class="text-sm font-semibold mb-6 bg-yellow-50 p-2 rounded-lg">
-            Renovação: R$ 1 400 (até R$ 900 com indicações)
+          <p class="text-sm font-semibold mb-6 p-2 rounded-lg" style="background-color: rgba(255, 179, 0, 0.1); color: var(--dark-gray-text);">
+            Renovação: R$ 1400 (até R$ 900 com indicações)
           </p>
-          <a href="https://wa.me/5541992741261" target="_blank" class="block bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition flex items-center justify-center">
+          <a href="https://wa.me/5541992741261" target="_blank" class="btn-secondary block w-full py-3 rounded-lg flex items-center justify-center">
             <i class="fab fa-whatsapp mr-2"></i> Consultar
           </a>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg border plan-card sr hover:z-10">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-400 to-gray-600"></div>
-          <h3 class="text-xl font-semibold mb-2">Enterprise &gt; 10 TR</h3>
-          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center">
+        <!-- Card Normal 2 -->
+        <div class="p-8 rounded-xl plan-card sr hover:z-10" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #dee2e6;">
+          <h3 class="text-xl font-semibold mb-2" style="color: var(--dark-gray-text);">Enterprise &gt; 10 TR</h3>
+          <p class="text-4xl font-extrabold mb-4 flex justify-center items-center" style="color: var(--primary);">
             <span class="text-lg mr-1">R$</span> Sob consulta
           </p>
-          <div class="bg-gray-50 rounded-lg p-3 mb-4">
-            <p class="text-sm">Projeto dedicado, equipe on‑site e SLA prioritário 24 h</p>
+          <div class="rounded-lg p-3 mb-4" style="background-color: var(--very-light-gray-bg);">
+            <p class="text-sm" style="color: var(--dark-gray-text);">Projeto dedicado, equipe on‑site e SLA prioritário 24 h</p>
           </div>
-          <a href="https://wa.me/5541992741261" target="_blank" class="block bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition flex items-center justify-center">
+          <a href="https://wa.me/5541992741261" target="_blank" class="btn-secondary block w-full py-3 rounded-lg flex items-center justify-center mt-auto">
             <i class="fas fa-phone-alt mr-2"></i> Falar com engenheiro
           </a>
         </div>
       </div>
-      <div class="max-w-3xl mx-auto bg-blue-50 border-l-4 border-blue-600 p-8 rounded-xl text-left text-sm sr">
-        <h4 class="text-lg font-semibold mb-4 text-blue-700 flex items-center">
-          <i class="fas fa-info-circle mr-2"></i>
+      <div class="max-w-3xl mx-auto p-8 rounded-xl text-left text-sm sr" style="background-color: var(--very-light-gray-bg); border-left: 4px solid var(--primary);">
+        <h4 class="text-lg font-semibold mb-4 flex items-center" style="color: var(--primary);">
+          <i class="fas fa-info-circle mr-2" style="color: var(--primary);"></i>
           Como funciona o Programa de Indicações
         </h4>
         <ul class="space-y-3 text-gray-700">
@@ -465,52 +515,40 @@
   </section>
 
   <!-- DEPOIMENTOS -->
-  <section id="depoimentos" class="py-20 bg-gray-100">
+  <section id="depoimentos" class="py-20" style="background-color: var(--very-light-gray-bg);">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4 sr text-primary">O que dizem nossos clientes</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto mb-12 sr">
+      <h2 class="text-3xl font-bold mb-12 sr" style="color: var(--primary); text-align: center;">O que dizem nossos clientes</h2>
+      <p class="max-w-3xl mx-auto mb-12 sr" style="color: var(--medium-gray-text);">
         Confira a experiência de quem já confiou na BLU Engenharia para cuidar da climatização do seu negócio em Curitiba.
       </p>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card relative sr">
-          <div class="flex justify-center mb-4">
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-          </div>
-          <p class="italic mb-6 text-gray-700 relative z-10">
+        <div class="p-8 rounded-xl testimonial-card relative sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <i class="fas fa-quote-left text-2xl mb-4" style="color: var(--primary);"></i>
+          <p class="italic mb-6" style="color: var(--medium-gray-text);">
             "Equipe extremamente atenciosa, relatório claro e dicas de economia que reduziram 12% da minha conta de luz já no mês seguinte após a implementação do PMOC. O dashboard de eficiência realmente faz diferença no dia a dia."
           </p>
           <div class="flex items-center justify-center">
-            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-              <i class="fas fa-user text-primary"></i>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mr-3" style="background-color: rgba(0, 77, 64, 0.1);">
+              <i class="fas fa-user" style="color: var(--primary);"></i>
             </div>
             <div class="text-left">
-              <h4 class="font-semibold">Mariana Silva</h4>
-              <p class="text-sm text-gray-500">Fashion Style Moda - Curitiba/PR</p>
+              <h4 class="font-semibold" style="color: var(--dark-gray-text);">Mariana Silva</h4>
+              <p class="text-sm" style="color: var(--medium-gray-text);">Fashion Style Moda - Curitiba/PR</p>
             </div>
           </div>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card relative sr">
-          <div class="flex justify-center mb-4">
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-            <i class="fas fa-star text-yellow-400 text-xl mx-0.5"></i>
-          </div>
-          <p class="italic mb-6 text-gray-700 relative z-10">
+        <div class="p-8 rounded-xl testimonial-card relative sr" style="background-color: var(--light-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <i class="fas fa-quote-left text-2xl mb-4" style="color: var(--primary);"></i>
+          <p class="italic mb-6" style="color: var(--medium-gray-text);">
             "Visita gratuita, tudo resolvido em menos de uma semana e ainda ganhei desconto por indicar vizinhos de loja. O PMOC ficou impecável e passei na fiscalização sem problemas. Recomendadíssimo!"
           </p>
           <div class="flex items-center justify-center">
-            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-              <i class="fas fa-user text-primary"></i>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center mr-3" style="background-color: rgba(0, 77, 64, 0.1);">
+              <i class="fas fa-user" style="color: var(--primary);"></i>
             </div>
             <div class="text-left">
-              <h4 class="font-semibold">Carlos Machado</h4>
-              <p class="text-sm text-gray-500">Sabor Caseiro - Curitiba/PR</p>
+              <h4 class="font-semibold" style="color: var(--dark-gray-text);">Carlos Machado</h4>
+              <p class="text-sm" style="color: var(--medium-gray-text);">Sabor Caseiro - Curitiba/PR</p>
             </div>
           </div>
         </div>
@@ -519,85 +557,85 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
+  <section class="py-20 text-center" style="background-color: var(--primary);">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6 sr">Pronto para transformar sua climatização em vantagem competitiva?</h2>
-      <p class="mb-8 text-lg sr max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 sr" style="color: var(--light-bg);">Pronto para transformar sua climatização em vantagem competitiva?</h2>
+      <p class="mb-8 text-lg sr max-w-3xl mx-auto" style="color: var(--light-bg);">
         Fale agora mesmo com nosso engenheiro especialista e agende a avaliação técnica gratuita em Curitiba!
       </p>
       <a href="https://wa.me/5541992741261" target="_blank" rel="noopener"
-         class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition inline-flex items-center sr">
+         class="btn-secondary px-8 py-4 rounded-lg font-semibold shadow-lg transition inline-flex items-center sr">
         <i class="fab fa-whatsapp text-xl mr-3"></i> WhatsApp (41) 99274‑1261
       </a>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" class="py-20">
+  <section id="contato" class="py-20" style="background-color: var(--light-bg);">
     <div class="container mx-auto px-6">
-      <div class="md:flex gap-12 items-center">
+      <div class="md:flex gap-12 items-start"> {/* items-start para alinhar os cards no topo */}
         <div class="md:w-1/2 sr mb-12 md:mb-0">
-          <h2 class="text-3xl font-bold mb-6 text-primary">Fale Conosco</h2>
-          <div class="w-20 h-1 bg-accent mb-8"></div>
-          <p class="mb-8 text-gray-700">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--primary);">Fale Conosco</h2>
+          <div class="w-20 h-1 mb-8" style="background-color: var(--secondary);"></div>
+          <p class="mb-8" style="color: var(--dark-gray-text);">
             Dúvidas sobre PMOC, orçamento ou agendamento de visita técnica gratuita? Entre em contato agora mesmo.
           </p>
           <div class="space-y-6">
             <div class="flex items-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                <i class="fas fa-envelope text-primary"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: rgba(0, 77, 64, 0.1);">
+                <i class="fas fa-envelope" style="color: var(--primary);"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Email</p>
-                <p class="font-medium">engenharia@bluengenharia.com</p>
+                <p class="text-sm" style="color: var(--medium-gray-text);">Email</p>
+                <p class="font-medium" style="color: var(--dark-gray-text);">engenharia@bluengenharia.com</p>
               </div>
             </div>
             <div class="flex items-center">
-              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                <i class="fab fa-whatsapp text-green-600"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: rgba(0, 77, 64, 0.1);">
+                <i class="fab fa-whatsapp" style="color: var(--primary);"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">WhatsApp</p>
-                <p class="font-medium">(41) 99274‑1261</p>
+                <p class="text-sm" style="color: var(--medium-gray-text);">WhatsApp</p>
+                <p class="font-medium" style="color: var(--dark-gray-text);">(41) 99274‑1261</p>
               </div>
             </div>
             <div class="flex items-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                <i class="fas fa-map-marker-alt text-primary"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: rgba(0, 77, 64, 0.1);">
+                <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Endereço</p>
-                <p class="font-medium">Curitiba – PR, Brasil</p>
+                <p class="text-sm" style="color: var(--medium-gray-text);">Endereço</p>
+                <p class="font-medium" style="color: var(--dark-gray-text);">Curitiba – PR, Brasil</p>
               </div>
             </div>
             <div class="flex items-center">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                <i class="fas fa-id-card text-primary"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: rgba(0, 77, 64, 0.1);">
+                <i class="fas fa-id-card" style="color: var(--primary);"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">CREA‑PR</p>
-                <p class="font-medium">Engenheiro Responsável Registrado</p>
+                <p class="text-sm" style="color: var(--medium-gray-text);">CREA‑PR</p>
+                <p class="font-medium" style="color: var(--dark-gray-text);">Engenheiro Responsável Registrado</p>
               </div>
             </div>
           </div>
         </div>
         <div class="md:w-1/2 sr">
-          <form action="https://formspree.io/f/xayvlzlk" method="POST" class="bg-white p-8 rounded-xl shadow-lg" aria-label="Formulário de contato">
-            <h3 class="text-2xl font-bold mb-6 text-primary">Solicitar Visita Técnica Gratuita</h3>
+          <form action="https://formspree.io/f/xayvlzlk" method="POST" class="p-8 rounded-xl shadow-lg" style="background-color: var(--very-light-gray-bg);" aria-label="Formulário de contato">
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--primary);">Solicitar Visita Técnica Gratuita</h3>
             <div class="mb-6">
-              <label class="block text-sm font-medium mb-2" for="nome">Nome</label>
-              <input required class="w-full border border-gray-300 rounded-lg px-4 py-3 form-input" type="text" name="nome" id="nome" placeholder="Seu nome completo" autocomplete="name" />
+              <label class="block text-sm font-medium mb-2" for="nome" style="color: var(--dark-gray-text);">Nome</label>
+              <input required class="w-full px-4 py-3 form-input" type="text" name="nome" id="nome" placeholder="Seu nome completo" autocomplete="name" style="border: 1px solid #ced4da; border-radius: 0.25rem;" />
             </div>
             <div class="mb-6">
-              <label class="block text-sm font-medium mb-2" for="email">Email</label>
-              <input required class="w-full border border-gray-300 rounded-lg px-4 py-3 form-input" type="email" name="email" id="email" placeholder="seu@email.com" autocomplete="email" />
+              <label class="block text-sm font-medium mb-2" for="email" style="color: var(--dark-gray-text);">Email</label>
+              <input required class="w-full px-4 py-3 form-input" type="email" name="email" id="email" placeholder="seu@email.com" autocomplete="email" style="border: 1px solid #ced4da; border-radius: 0.25rem;" />
             </div>
             <div class="mb-6">
-              <label class="block text-sm font-medium mb-2" for="mensagem">Mensagem</label>
-              <textarea required class="w-full border border-gray-300 rounded-lg px-4 py-3 h-32 form-input" name="mensagem" id="mensagem" placeholder="Como podemos ajudar com seu sistema de climatização?"></textarea>
+              <label class="block text-sm font-medium mb-2" for="mensagem" style="color: var(--dark-gray-text);">Mensagem</label>
+              <textarea required class="w-full px-4 py-3 h-32 form-input" name="mensagem" id="mensagem" placeholder="Como podemos ajudar com seu sistema de climatização?" style="border: 1px solid #ced4da; border-radius: 0.25rem;"></textarea>
             </div>
             <input type="text" name="_gotcha" style="display: none" />
-            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition w-full font-semibold flex items-center justify-center">
+            <button type="submit" class="btn-primary w-full font-semibold flex items-center justify-center">
               <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
             </button>
           </form>
@@ -607,28 +645,28 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-400 text-sm py-12">
+  <footer class="text-sm py-12" style="background-color: var(--dark-gray-text); color: var(--very-light-gray-bg);">
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-        <a href="#home" class="text-2xl font-bold text-white tracking-wider mb-4 md:mb-0">
-          BLU <span class="text-yellow-400">Engenharia</span>
+        <a href="#home" class="text-2xl font-bold tracking-wider mb-4 md:mb-0" style="color: var(--light-bg);">
+          BLU <span style="color: var(--secondary);">Engenharia</span>
         </a>
         <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
-          <a href="https://wa.me/5541992741261" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="WhatsApp"><i class="fab fa-whatsapp text-white"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition social-icon" aria-label="Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition social-icon" aria-label="Instagram"><i class="fab fa-instagram text-white"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
+          <a href="https://wa.me/5541992741261" target="_blank" rel="noopener" class="w-10 h-10 rounded-full flex items-center justify-center transition social-icon-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp text-white"></i></a>
         </div>
       </div>
-      <hr class="border-gray-800 mb-8" />
+      <hr class="mb-8" style="border-color: var(--medium-gray-text);" />
       <div class="text-center">
         <p class="mb-2">© 2025 BLU Engenharia LTDA • Todos os direitos reservados • CNPJ 47.071.256/0001-53 • Curitiba/PR</p>
         <p>
           Especialistas em
-          <a href="#servicos" class="text-blue-300 hover:underline">PMOC</a>,
-          <a href="#servicos" class="text-blue-300 hover:underline">Consultoria HVAC</a>
+          <a href="#servicos" class="hover:underline" style="color: var(--secondary);">PMOC</a>,
+          <a href="#servicos" class="hover:underline" style="color: var(--secondary);">Consultoria HVAC</a>
           e
-          <a href="#servicos" class="text-blue-300 hover:underline">Engenharia de Climatização</a>
+          <a href="#servicos" class="hover:underline" style="color: var(--secondary);">Engenharia de Climatização</a>
           em Curitiba e região
         </p>
       </div>
